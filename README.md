@@ -7,9 +7,9 @@ Basé sur eleventy 2.0, sass (avec du BEM pour essayer).
 
 ### Commandes
 
-npm install
-npm start
-npm build
+npm install  
+npm start  
+npm build  
 
 ## Remercienents
 

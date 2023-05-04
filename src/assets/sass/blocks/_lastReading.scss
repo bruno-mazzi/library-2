@@ -3,4 +3,10 @@
 
 .lastReading {
   padding: rem-calc(16);
+
+  &__content {
+    display: flex;
+    gap: rem-calc(16);
+    justify-content: center;
+  }
 }

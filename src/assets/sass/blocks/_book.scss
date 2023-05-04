@@ -1,0 +1,16 @@
+@use '../config/variables' as *;
+@use '../config/functions' as *;
+
+.book {
+    &__link {
+        display: block;
+        max-width: rem-calc(200);
+        text-align: center;
+        text-decoration: none;
+    }
+
+    &__visual {
+        height: auto;
+        width: 100%
+    }
+}

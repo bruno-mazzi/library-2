@@ -5,18 +5,20 @@ layout: "base.njk"
 
 <div class="lastReading">
     <h2 class="title2">Dernières lectures</h2>
-    {% for post in collections.post | limit(9) %}
-        <article class="book">
-            <a href="{{ post.url }}" class="book__link">
-                <img src="assets/img/{{ post.data.couverture }}.webp"
-                     alt="couverture de {{ post.data.title }}" loading="lazy"
-                     class="book__visual">
+    <div class="lastReading__content">
+        {% for post in collections.post | limit(9) %}
+            <article class="book">
+                <a href="{{ post.url }}" class="book__link">
+                    <img src="assets/img/{{ post.data.couverture }}.webp"
+                        alt="couverture de {{ post.data.title }}" loading="lazy"
+                        class="book__visual">
 
-                <h3 class="title3">{{ post.data.title }}</h3>
-                <h4 class="title4">{{ post.data.author }}</h4>
-            </a>
-        </article>
-    {% endfor %}
+                    <h3 class="title3">{{ post.data.title }}</h3>
+                    <h4 class="title4">{{ post.data.author }}</h4>
+                </a>
+            </article>
+        {% endfor %}
+    </div>
 </div>
 
 <div class="category">
