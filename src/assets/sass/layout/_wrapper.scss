@@ -1,0 +1,19 @@
+@use '../config/variables' as *;
+@use '../config/functions' as *;
+
+.wrapper {
+  padding: rem-calc(32) 0;
+
+  &--cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem-calc(32);
+    justify-content: center;
+    margin: rem-calc(32) 0;
+  }
+
+  &--max {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+}

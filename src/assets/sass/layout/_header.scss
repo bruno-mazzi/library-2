@@ -1,0 +1,21 @@
+@use '../config/variables' as *;
+@use '../config/functions' as *;
+
+.header {
+  background: var(--theme--color-primary);
+  color: var(--theme--text);
+  margin-bottom: rem-calc(16);
+  padding: rem-calc(16);
+
+  &__title {
+    font-size: rem-calc(32);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: rem-calc(18);
+    font-weight: 400;
+    margin: 0;
+  }
+}

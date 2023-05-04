@@ -1,0 +1,17 @@
+@use '../config/variables' as *;
+@use '../config/functions' as *;
+
+.footer {
+  background: var(--theme--color-primary);
+  color: var(--theme--text);
+  padding: rem-calc(16);
+
+  &__text {
+    font-size: rem-calc(14);
+  }
+
+  &__link {
+    color: var(--theme--text);
+    text-decoration: underline;
+  }
+}

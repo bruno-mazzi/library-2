@@ -1,0 +1,54 @@
+---
+metaTitle: "Accueil"
+layout: "base.njk"
+---
+
+<div class="lastReading">
+    <h2 class="title2">Dernières lectures</h2>
+    {% for post in collections.post | limit(9) %}
+        <article class="book">
+            <a href="{{ post.url }}" class="book__link">
+                <img src="assets/img/{{ post.data.couverture }}.webp"
+                     alt="couverture de {{ post.data.title }}" loading="lazy"
+                     class="book__visual">
+
+                <h3 class="title3">{{ post.data.title }}</h3>
+                <h4 class="title4">{{ post.data.author }}</h4>
+            </a>
+        </article>
+    {% endfor %}
+</div>
+
+<div class="category">
+    <h2 class="title2">Categories</h2>
+    <ul class="category__list">
+        <li class="category__listItem"><a href="" class="category__link">Guide</a></li>
+    </ul>
+</div>
+
+<div class="wrapper wrapper--cards wrapper--max">
+    <h2 class="title2">Toutes les lectures</h2>
+    {% for post in collections.post %}
+        <article class="book book--details">
+            <a href="{{ post.url }}" class="book__link">
+                <img src="assets/img/{{ post.data.couverture }}.webp"
+                     alt="couverture de {{ post.data.title }}" loading="lazy"
+                     class="book__visual">
+            </a>
+
+            <div>
+                <h3 class="title3">{{ post.data.title }}</h3>
+                <h4 class="title4">{{ post.data.author }}</h4>
+            </div>
+
+            <footer>
+                <p class="book__text">Date de publication : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span></p>
+                <p class="book__text">Catégorie :
+                    {% for cat in post.data.categories %}
+                        <a href="/categories/{{ cat }}/index.html" class="card__link">{{ cat }}</a>
+                    {% endfor %}
+                </p>
+            </footer>
+        </article>
+    {% endfor %}
+</div>

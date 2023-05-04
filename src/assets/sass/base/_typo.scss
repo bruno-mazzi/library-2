@@ -1,0 +1,7 @@
+@use '../config/variables' as *;
+@use '../config/functions' as *;
+
+.title2 {
+  font-size: rem-calc(24);
+  font-weight: 600;
+}
