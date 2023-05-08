@@ -14,3 +14,5 @@ npm build
 ## Remercienents
 
 Le guide de Raymond Camdem m'a bien aidé pour commencer sur Eleventy : https://cfjedimaster.github.io/eleventy-blog-guide/guide.html
+
+https://11ty.rocks/ pour les shortcodes

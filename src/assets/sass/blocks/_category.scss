@@ -1,0 +1,27 @@
+@use '../config/variables' as *;
+@use '../config/functions' as *;
+
+.category {
+  background: var(--theme--color-primary);
+  color: var(--theme--text);
+  padding: rem-calc(16);
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__listItem {
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  &__link {
+    background: var(--theme--white);
+    border-radius: rem-calc(12);
+    color: var(--theme--text);
+    display: block;
+    text-decoration: none;
+    padding: rem-calc(8);
+  }
+}

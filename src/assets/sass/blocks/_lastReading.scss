@@ -5,8 +5,11 @@
   padding: rem-calc(16);
 
   &__content {
+    overflow-x: auto;
+  }
+
+  &__innerContent {
     display: flex;
     gap: rem-calc(16);
-    justify-content: center;
   }
 }

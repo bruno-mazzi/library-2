@@ -2,6 +2,28 @@
 @use '../config/functions' as *;
 
 .title2 {
+  color: var(--theme--text);
   font-size: rem-calc(24);
   font-weight: 600;
+  margin: 0 0 rem-calc(16) 0;
+}
+
+.title3 {
+  color: var(--theme--text);
+  font-size: rem-calc(20);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 rem-calc(16) 0;
+
+  &--noMargin {
+    margin:0;
+  }
+}
+
+.title4 {
+  color: var(--theme--text);
+  font-size: rem-calc(16);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 rem-calc(16) 0;
 }

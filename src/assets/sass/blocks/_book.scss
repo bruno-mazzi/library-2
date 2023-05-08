@@ -1,16 +1,57 @@
 @use '../config/variables' as *;
 @use '../config/functions' as *;
+@use '../config/mixins' as *;
 
 .book {
     &__link {
         display: block;
-        max-width: rem-calc(200);
         text-align: center;
         text-decoration: none;
+        width: rem-calc(200);
+
+        &--grid {
+            max-width: rem-calc(80);
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
     }
 
     &__visual {
         height: auto;
         width: 100%
+    }
+
+    &--details {
+        display: grid;
+        gap: rem-calc(8);
+        grid-template-columns: auto 1fr;
+        grid-auto-rows: auto auto;
+
+        @include mq('md') {
+            flex: 1 1 0px;
+        }
+    }
+
+    &__title {
+
+        &--grid {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+    }
+
+    &__footer {
+
+        &--grid {
+            align-self: end;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+    }
+
+    &__text {
+        color: var(--theme--text);
+        font-size: rem-calc(15);
+        margin:0;
     }
 }
