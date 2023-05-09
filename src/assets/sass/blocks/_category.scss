@@ -4,7 +4,7 @@
 .category {
   background: var(--theme--color-primary);
   color: var(--theme--text);
-  padding: rem-calc(16);
+  padding: 16px;
 
   &__list {
     margin: 0;
@@ -18,10 +18,11 @@
 
   &__link {
     background: var(--theme--white);
-    border-radius: rem-calc(12);
+    border-radius: 12px;
     color: var(--theme--text);
     display: block;
+    margin-bottom: 4px;
     text-decoration: none;
-    padding: rem-calc(8);
+    padding: 8px;
   }
 }

@@ -9,6 +9,16 @@ module.exports = function(eleventyConfig) {
         excerpt_separator: "<!-- excerpt -->"
     });
 
+    eleventyConfig.addCollection("categories", function(collectionApi) {
+        let categories = new Set();
+        let posts = collectionApi.getFilteredByTag('post');
+        posts.forEach(p => {
+            let cats = p.data.categories;
+            cats.forEach(c => categories.add(c));
+        });
+        return Array.from(categories);
+    });
+
     /* shortcodes */
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
@@ -25,6 +35,16 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("limit", function (arr, limit) {
         return arr.slice(0, limit);
+    });
+
+    eleventyConfig.addFilter("filterByCategory", function(posts, cat) {
+        cat = cat.toLowerCase();
+        let result = posts.filter(p => {
+            let cats = p.data.categories.map(s => s.toLowerCase());
+            return cats.includes(cat);
+        });
+
+        return result;
     });
 
     return {

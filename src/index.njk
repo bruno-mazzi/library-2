@@ -26,8 +26,9 @@ layout: "base.njk"
 <div class="category">
     <h2 class="title2">Categories</h2>
     <ul class="category__list">
-        <li class="category__listItem"><a href="" class="category__link">Guide</a></li>
-        <li class="category__listItem"><a href="" class="category__link">Educatif</a></li>
+        {% for post in collections.categories %}
+            <li class="category__listItem"><a href="/categories/{{ post | slugify }}/index.html" class="category__link">{{ post }}</a></li>
+        {% endfor %}
     </ul>
 </div>
 
@@ -36,22 +37,22 @@ layout: "base.njk"
     <div class="wrapper__content wrapper__content--books">
         {% for post in collections.post %}
             <article class="book book--details">
-                <a href="{{ post.url }}" class="book__link book__link--grid">
+                <a href="{{ post.url }}" class="book__link">
                     <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
                          alt="couverture de {{ post.data.title }}" loading="lazy"
                          class="book__visual">
                 </a>
 
-                <div class="book__title--grid">
+                <div class="book__title">
                     <h3 class="title3 title3--noMargin">{{ post.data.title }}</h3>
                     <h4 class="title4">{{ post.data.author }}</h4>
                 </div>
 
-                <footer class="book__footer--grid">
+                <footer class="book__footer">
                     <p class="book__text">Date de publication : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span></p>
                     <p class="book__text">Catégorie :
                         {% for cat in post.data.categories %}
-                            <a href="/categories/{{ cat }}/index.html" class="card__link">{{ cat }}</a>
+                            <a href="/categories/{{ cat | slugify }}/index.html" class="book__inlineLink">{{ cat }}</a>
                         {% endfor %}
                     </p>
                 </footer>
