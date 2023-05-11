@@ -1,28 +1,9 @@
-@use '../config/variables' as *;
-@use '../config/functions' as *;
+@use '../config' as *;
 
 .category {
-  background: var(--theme--color-primary);
-  color: var(--theme--text);
-  padding: 16px;
-
-  &__list {
-    margin: 0;
-    padding: 0;
-  }
+  padding: 16px 0;
 
   &__listItem {
     display: inline-block;
-    list-style-type: none;
-  }
-
-  &__link {
-    background: var(--theme--white);
-    border-radius: 12px;
-    color: var(--theme--text);
-    display: block;
-    margin-bottom: 4px;
-    text-decoration: none;
-    padding: 8px;
   }
 }

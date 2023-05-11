@@ -1,0 +1,62 @@
+<div class="wrapper">
+    <div class="wrapper__inner">
+        <h2 class="title title--2">Dernières lectures</h2>
+
+        <div class="lastReading">
+            {% for post in collections.post | limit(10) %}
+                <article class="book">
+                    <a href="{{ post.url }}" class="book__link">
+                        <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
+                             alt="couverture de {{ post.data.title }}" loading="lazy">
+
+                        <h3 class="title title--3 title-mb8">{{ post.data.title }}</h3>
+                        <h4 class="title title--4">{{ post.data.author }}</h4>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+
+        <div class="lastReading lastReading--md">
+            {% for post in collections.post | limit(3) %}
+                <article class="book">
+                    <a href="{{ post.url }}" class="book__link">
+                        <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
+                             alt="couverture de {{ post.data.title }}" loading="lazy">
+
+                        <h3 class="title title--3 title--mb8">{{ post.data.title }}</h3>
+                        <h4 class="title title--4">{{ post.data.author }}</h4>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+
+        <div class="lastReading lastReading--ml">
+            {% for post in collections.post | limit(5) %}
+                <article class="book">
+                    <a href="{{ post.url }}" class="book__link">
+                        <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
+                             alt="couverture de {{ post.data.title }}" loading="lazy">
+
+                        <h3 class="title title--3 title--mb8">{{ post.data.title }}</h3>
+                        <h4 class="title title--4">{{ post.data.author }}</h4>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+
+        <div class="lastReading lastReading--lg">
+            {% for post in collections.post | limit(6) %}
+                <article class="book">
+                    <a href="{{ post.url }}" class="book__link">
+                        <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
+                             alt="couverture de {{ post.data.title }}" loading="lazy">
+
+                        <h3 class="title title--3 title--mb8">{{ post.data.title }}</h3>
+                        <h4 class="title title--4">{{ post.data.author }}</h4>
+                    </a>
+                </article>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>

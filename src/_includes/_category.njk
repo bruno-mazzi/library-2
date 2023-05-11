@@ -1,0 +1,10 @@
+<div class="wrapper wrapper--dark">
+    <div class="wrapper__inner">
+        <h2 class="title title--2">Categories</h2>
+        <ul class="category">
+            {% for post in collections.categories %}
+                <li class="category__listItem"><a href="/categories/{{ post | slugify }}/index.html" class="btn btn--secondary">{{ post }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

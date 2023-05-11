@@ -1,25 +1,14 @@
-@use '../config/variables' as *;
-@use '../config/functions' as *;
-@use '../config/mixins' as *;
+@use '../config' as *;
 
 .wrapper {
-  padding: rem-calc(16);
+  padding: 16px;
 
-  &__content {
+  &--dark {
+    background: var(--theme--color-secondary);
+  }
 
-    &--books {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 1fr;
-
-      @include mq('md') {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      @include mq('lg') {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
-
-    }
+  &__inner {
+    margin: 0 auto;
+    max-width: 1400px;
   }
 }

@@ -1,0 +1,15 @@
+@use '../config' as *;
+
+.btn {
+  border:0;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 4px;
+  text-decoration: none;
+  padding: 8px;
+
+  &--secondary {
+    background: var(--theme--white);
+    color: var(--theme--text);
+  }
+}

@@ -3,60 +3,8 @@ metaTitle: "Accueil"
 layout: "base.njk"
 ---
 
-<div class="lastReading">
-    <h2 class="title2">Dernières lectures</h2>
-    <div class="lastReading__content">
-        <div class="lastReading__innerContent">
-            {% for post in collections.post | limit(10) %}
-                <article class="book">
-                    <a href="{{ post.url }}" class="book__link">
-                        <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
-                            alt="couverture de {{ post.data.title }}" loading="lazy"
-                            class="book__visual">
+{% include '_lastReading.njk' %}
 
-                        <h3 class="title3">{{ post.data.title }}</h3>
-                        <h4 class="title4">{{ post.data.author }}</h4>
-                    </a>
-                </article>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+{% include '_category.njk' %}
 
-<div class="category">
-    <h2 class="title2">Categories</h2>
-    <ul class="category__list">
-        {% for post in collections.categories %}
-            <li class="category__listItem"><a href="/categories/{{ post | slugify }}/index.html" class="category__link">{{ post }}</a></li>
-        {% endfor %}
-    </ul>
-</div>
-
-<div class="wrapper">
-    <h2 class="title2">Toutes les lectures</h2>
-    <div class="wrapper__content wrapper__content--books">
-        {% for post in collections.post %}
-            <article class="book book--details">
-                <a href="{{ post.url }}" class="book__link">
-                    <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
-                         alt="couverture de {{ post.data.title }}" loading="lazy"
-                         class="book__visual">
-                </a>
-
-                <div class="book__title">
-                    <h3 class="title3 title3--noMargin">{{ post.data.title }}</h3>
-                    <h4 class="title4">{{ post.data.author }}</h4>
-                </div>
-
-                <footer class="book__footer">
-                    <p class="book__text">Date de publication : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span></p>
-                    <p class="book__text">Catégorie :
-                        {% for cat in post.data.categories %}
-                            <a href="/categories/{{ cat | slugify }}/index.html" class="book__inlineLink">{{ cat }}</a>
-                        {% endfor %}
-                    </p>
-                </footer>
-            </article>
-        {% endfor %}
-    </div>
-</div>
+{% include '_allBooks.njk' %}

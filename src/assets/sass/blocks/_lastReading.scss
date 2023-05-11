@@ -1,15 +1,45 @@
-@use '../config/variables' as *;
-@use '../config/functions' as *;
+@use '../config' as *;
 
 .lastReading {
-  padding: rem-calc(16);
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding: 16px 0;
 
-  &__content {
-    overflow-x: auto;
+  @include mq('md') {
+    display: none;
   }
 
-  &__innerContent {
-    display: flex;
-    gap: rem-calc(16);
+  &--md {
+    display: none;
+
+    @include mq('md') {
+      display: flex;
+    }
+
+    @include mq('ml') {
+      display: none;
+    }
+  }
+
+  &--ml {
+    display: none;
+
+    @include mq('ml') {
+      display: flex;
+    }
+
+    @include mq('lg') {
+      display: none;
+    }
+  }
+
+  &--lg {
+    display: none;
+
+    @include mq('lg') {
+      display: flex;
+    }
   }
 }
