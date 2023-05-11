@@ -6,7 +6,7 @@ last-update: 20-06-2022
 categories: ["Guide"]
 tags: post
 couverture: "kotchi-kotchi"
-layout: "base.njk"
+layout: "page.njk"
 ---
 
 Si vous ne deviez prendre qu’un guide pour voyager au Japon, c’est simple, c’est celui-là. C’est le guide que j’aurais aimé avoir pour mon premier voyage.
