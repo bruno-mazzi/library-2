@@ -18,7 +18,7 @@
                         <p class="text text--sm">Date de publication : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span></p>
                         <p class="text text--sm">Catégorie :
                             {% for cat in post.data.categories %}
-                                <a href="/categories/{{ cat | slugify }}/index.html" class="text--link">{{ cat }}</a>
+                                <a href="/categories/{{ cat | slugify }}/index.html" class="link">{{ cat }}</a>
                             {% endfor %}
                         </p>
                     </footer>
