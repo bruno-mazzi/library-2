@@ -1,9 +1,54 @@
 @use '../config' as *;
 
 .page {
+  background: var(--theme--main-bg);
   font-family: "Open Sans", arial, sans-serif;
   margin:0;
   padding:0;
+
+  @include dm() {
+    --theme--main-bg : hsl(220, 26%, 14%);
+    --theme--color-primary: hsl(216, 23%, 23%);
+    --theme--color-secondary: hsl(216, 19%, 28%);
+    --theme--color-tertiary: hsl(218, 17%, 35%);
+    --theme--text: hsl(0, 0%, 100%);
+    --theme--highlight: hsl(172, 66%, 70%);
+  }
+
+  &--dark {
+    --theme--main-bg : hsl(220, 26%, 14%);
+    --theme--color-primary: hsl(216, 23%, 23%);
+    --theme--color-secondary: hsl(216, 19%, 28%);
+    --theme--color-tertiary: hsl(218, 17%, 35%);
+    --theme--text: hsl(0, 0%, 100%);
+    --theme--highlight: hsl(172, 66%, 70%);
+
+    img {
+      filter: brightness(.8) contrast(1.2);
+    }
+  }
+
+  &--light {
+    --theme--main-bg : hsl(210, 24%, 84%);
+    --theme--color-primary: hsl(214, 32%, 91%);
+    --theme--color-secondary: hsl(195, 33%, 98%);
+    --theme--color-tertiary: hsl(0, 0%, 100%);
+    --theme--text: hsl(219, 19%, 32%);
+    --theme--highlight: hsl(177, 53%, 45%);
+
+    img {
+      filter: brightness(1) contrast(1);
+    }
+
+    @include dm() {
+      --theme--main-bg : hsl(210, 24%, 84%);
+      --theme--color-primary: hsl(214, 32%, 91%);
+      --theme--color-secondary: hsl(195, 33%, 98%);
+      --theme--color-tertiary: hsl(0, 0%, 100%);
+      --theme--text: hsl(219, 19%, 32%);
+      --theme--highlight: hsl(177, 53%, 45%);
+    }
+  }
 
   &__article {
     margin: 0;

@@ -9,7 +9,7 @@
   padding: 8px;
 
   &--secondary {
-    background: var(--theme--white);
-    color: var(--theme--text);
+    background: var(--theme--highlight);
+    color: var(--theme--color-primary);
   }
 }

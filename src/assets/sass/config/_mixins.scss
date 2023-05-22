@@ -12,3 +12,9 @@ $breakpoints: (
     @content;
   }
 }
+
+@mixin dm() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}

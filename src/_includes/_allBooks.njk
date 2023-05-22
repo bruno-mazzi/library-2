@@ -6,7 +6,7 @@
                 <article class="book book--details">
                     <a href="{{ post.url }}" class="book__link">
                         <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
-                             alt="couverture de {{ post.data.title }}" loading="lazy">
+                             alt="couverture de {{ post.data.title }}" loading="lazy" class="book__visual">
                     </a>
 
                     <div class="book__title">
@@ -25,5 +25,17 @@
                 </article>
             {% endfor %}
         </div>
+        <nav class="booksList__pagination pagination">
+            <button class="" id="prev-button" title="Previous page" aria-label="Previous page">
+                &lt;
+            </button>
+
+            <div id="pagination__numbers">
+
+            </div>
+            <button class="" id="next-button" title="Next page" aria-label="Next page">
+                &gt;
+            </button>
+        </nav>
     </div>
 </div>
