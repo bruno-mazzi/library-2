@@ -1,0 +1,18 @@
+@use '../config' as *;
+
+.pagination {
+  display: none;
+  text-align: center;
+
+  &__btn {
+    display: inline;
+  }
+
+  &__numbers {
+    display: inline-block;
+  }
+
+  &__number {
+    margin:0 2px;
+  }
+}

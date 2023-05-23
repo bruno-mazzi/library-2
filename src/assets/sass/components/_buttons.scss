@@ -3,7 +3,7 @@
 .btn {
   border:0;
   border-radius: 12px;
-  display: block;
+  cursor: pointer;
   margin-bottom: 4px;
   text-decoration: none;
   padding: 8px;
@@ -11,5 +11,10 @@
   &--secondary {
     background: var(--theme--highlight);
     color: var(--theme--color-primary);
+  }
+
+  &--disabled {
+    cursor: default;
+    filter: grayscale(100%);
   }
 }

@@ -8,13 +8,14 @@ export default class Pagination {
         this.listItems = this.paginatedList.querySelectorAll(".book");
         this.nextButton = document.getElementById("next-button");
         this.prevButton = document.getElementById("prev-button");
-        this.paginationNumbers = document.getElementById("pagination__numbers");
+        this.paginationNumbers = document.querySelector(".pagination__numbers");
         this.pageNumber = document.createElement("button");
 
         this.paginationLimit = 9;
         this.pageCount = Math.ceil(this.listItems.length / this.paginationLimit);
         let currentPage;
 
+        document.querySelector(".pagination").style.display = 'block';
         this.getPaginationNumbers();
         this.setCurrentPage(1);
 
@@ -32,7 +33,7 @@ export default class Pagination {
 
     appendPageNumber = (index) => {
         const pageNumber = document.createElement("button");
-        pageNumber.className = "pagination__number";
+        pageNumber.className = "pagination__number btn btn--secondary";
         pageNumber.innerHTML = index;
         pageNumber.setAttribute("page-index", index);
         pageNumber.setAttribute("aria-label", "Page " + index);
@@ -72,22 +73,22 @@ export default class Pagination {
 
     handleActivePageNumber = () => {
         document.querySelectorAll(".pagination__number").forEach((button) => {
-            button.classList.remove("pagination__number--active");
+            button.classList.remove("btn--tertiary");
             const pageIndex = Number(button.getAttribute("page-index"));
 
             if (pageIndex == this.currentPage) {
-                button.classList.add("pagination__number--active");
+                button.classList.add("btn--tertiary");
             }
         });
     };
 
     disableButton = (button) => {
-        button.classList.add("pagination__number--disabled");
+        button.classList.add("btn--disabled");
         button.setAttribute("disabled", true);
     };
 
     enableButton = (button) => {
-        button.classList.remove("pagination__number--disabled");
+        button.classList.remove("btn--disabled");
         button.removeAttribute("disabled");
     };
 
@@ -104,7 +105,5 @@ export default class Pagination {
             this.enableButton(this.nextButton);
         }
     };
-
-
 
 }

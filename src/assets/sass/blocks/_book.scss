@@ -13,6 +13,10 @@
     @include mq('lg') {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
+    &__pagination {
+        margin-top: 32px;
+    }
 }
 
 .book {
