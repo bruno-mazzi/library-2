@@ -1,3 +1,6 @@
+
+const PAGINATION_LIMIT = 9;
+
 export default class Pagination {
 
     // basé sur https://webdesign.tutsplus.com/tutorials/pagination-with-vanilla-javascript--cms-41896
@@ -9,10 +12,8 @@ export default class Pagination {
         this.nextButton = document.getElementById("next-button");
         this.prevButton = document.getElementById("prev-button");
         this.paginationNumbers = document.querySelector(".pagination__numbers");
-        this.pageNumber = document.createElement("button");
 
-        this.paginationLimit = 9;
-        this.pageCount = Math.ceil(this.listItems.length / this.paginationLimit);
+        this.pageCount = Math.ceil(this.listItems.length / PAGINATION_LIMIT);
         let currentPage;
 
         document.querySelector(".pagination").style.display = 'block';
@@ -60,8 +61,8 @@ export default class Pagination {
             this.setCurrentPage(this.currentPage + 1);
         });
 
-        const prevRange = (pageNum - 1) * this.paginationLimit;
-        const currRange = pageNum * this.paginationLimit;
+        const prevRange = (pageNum - 1) * PAGINATION_LIMIT;
+        const currRange = pageNum * PAGINATION_LIMIT;
 
         this.listItems.forEach((item, index) => {
             item.classList.add("book--hidden");
