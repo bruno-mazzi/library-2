@@ -5,16 +5,22 @@ export default class Pagination {
 
     // basé sur https://webdesign.tutsplus.com/tutorials/pagination-with-vanilla-javascript--cms-41896
 
+    paginatedList = null;
+    listItems = null;
+    nextButton = null;
+    prevButton = null;
+    paginationNumbers = null;
+    pageCount = null;
+    currentPage = null;
+
     constructor() {
 
-        this.paginatedList = document.querySelector(".booksList");
+        this.paginatedList = document.querySelector("[data-paginated]");
         this.listItems = this.paginatedList.querySelectorAll(".book");
         this.nextButton = document.getElementById("next-button");
         this.prevButton = document.getElementById("prev-button");
         this.paginationNumbers = document.querySelector(".pagination__numbers");
-
         this.pageCount = Math.ceil(this.listItems.length / PAGINATION_LIMIT);
-        let currentPage;
 
         document.querySelector(".pagination").style.display = 'block';
         this.getPaginationNumbers();

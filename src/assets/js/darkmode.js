@@ -1,6 +1,5 @@
 const BODY = document.body;
 const PREFER_COLOR = window.matchMedia("(prefers-color-scheme: dark)");
-const BTN = document.querySelector("[data-theme]");
 
 export default class Darkmode {
 
@@ -21,9 +20,10 @@ export default class Darkmode {
     }
 
     buttonToggle = () => {
+        this.btn = document.querySelector("[data-theme]");
         let theme;
 
-        BTN.addEventListener("click", function() {
+        this.btn.addEventListener("click", function() {
             if (PREFER_COLOR.matches) {
                 BODY.classList.toggle("page--light");
                 theme = BODY.classList.contains("page--light") ? "light" : "dark";

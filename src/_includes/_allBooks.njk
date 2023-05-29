@@ -5,7 +5,7 @@
             <button class="filter__btn btn btn--secondary" id="date-button">Trier par date de publication</button>
             <button class="filter__btn btn btn--secondary" id="name-button">Trier par nom</button>
         </div>
-        <div class="booksList">
+        <div class="booksList" data-paginated>
             {% for post in collections.post %}
                 <article class="book book--details">
                     <a href="{{ post.url }}" class="book__link">
