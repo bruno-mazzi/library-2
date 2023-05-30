@@ -3,8 +3,6 @@ import Pagination from "./pagination.js";
 import Filter from "./filter.js";
 window.addEventListener('DOMContentLoaded', (event) => {
     new Darkmode();
-
-
-    new Pagination();
-    new Filter();
+    new Pagination( "booksList", 9);
+    new Filter("bookList");
 });

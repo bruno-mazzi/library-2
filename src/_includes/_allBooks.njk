@@ -2,19 +2,19 @@
     <div class="wrapper__inner">
         <h2 class="title title--2">Toutes les lectures</h2>
         <div class="filters">
-            <button class="filter__btn btn btn--secondary" id="date-button">Trier par date de publication</button>
-            <button class="filter__btn btn btn--secondary" id="name-button">Trier par nom</button>
+            <button class="filter__btn btn btn--secondary" data-timeBtn>Trier par date de publication</button>
+            <button class="filter__btn btn btn--secondary" data-nameBtn>Trier par nom</button>
         </div>
-        <div class="booksList" data-paginated>
+        <div class="booksList" data-paginator="booksList" data-filters="bookList">
             {% for post in collections.post %}
-                <article class="book book--details">
+                <article class="book book--details" data-paginated data-element="{{ loop.index }}">
                     <a href="{{ post.url }}" class="book__link">
                         <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
                              alt="couverture de {{ post.data.title }}" loading="lazy" class="book__visual">
                     </a>
 
                     <div class="book__title">
-                        <h3 class="title title--3">{{ post.data.title }}</h3>
+                        <h3 class="title title--3" data-name="{{ post.data.title }}">{{ post.data.title }}</h3>
                         <h4 class="title title--4">{{ post.data.author }}</h4>
                     </div>
 
@@ -30,14 +30,14 @@
             {% endfor %}
         </div>
         <nav class="booksList__pagination pagination">
-            <button class="pagination__btn btn btn--secondary" id="prev-button" title="Page précédente" aria-label="Page précédente">
+            <button class="pagination__btn btn btn--secondary" title="Page précédente" aria-label="Page précédente" data-prev>
                 &lt;
             </button>
 
-            <div class="pagination__numbers">
+            <div class="pagination__numbers" data-numbers>
 
             </div>
-            <button class="pagination__btn btn btn--secondary" id="next-button" title="Page suivante" aria-label="Page suivante">
+            <button class="pagination__btn btn btn--secondary" title="Page suivante" aria-label="Page suivante" data-next>
                 &gt;
             </button>
         </nav>
