@@ -7,7 +7,7 @@
         </div>
         <div class="booksList" data-paginator="booksList" data-filters="booksList">
             {% for post in collections.post %}
-                <article class="book book--details" data-paginated data-element="{{ loop.index }}">
+                <article class="book book--details" data-paginated data-filtered-item>
                     <a href="{{ post.url }}" class="book__link">
                         <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
                              alt="couverture de {{ post.data.title }}" loading="lazy" class="book__visual">
