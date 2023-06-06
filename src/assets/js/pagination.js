@@ -3,7 +3,6 @@ export default class Pagination {
 
     // basé sur https://webdesign.tutsplus.com/tutorials/pagination-with-vanilla-javascript--cms-41896
 
-    paginatedList = null;
     listItems = null;
     nextButton = null;
     prevButton = null;
@@ -11,16 +10,17 @@ export default class Pagination {
     pageCount = null;
     currentPage = null;
 
-    constructor( name, limit ) {
+    constructor( node, limit ) {
 
+        this.parentNode = node;
         this.limit = limit;
-        this.name = name;
 
-        this.paginatedList = document.querySelector("[data-paginator=" + this.name +"]");
-        this.listItems = this.paginatedList.querySelectorAll("[data-paginated]");
-        this.nextButton = document.querySelector("[data-next]");
-        this.prevButton = document.querySelector("[data-prev]");
-        this.paginationNumbers = document.querySelector("[data-numbers]");
+        this.setListItems()
+        this.navWrapper = this.parentNode.querySelector("[data-paginate-wrapper]");
+
+        this.nextButton = this.parentNode.querySelector("[data-next]");
+        this.prevButton = this.parentNode.querySelector("[data-prev]");
+        this.paginationNumbers = this.parentNode.querySelector("[data-numbers]");
         this.pageCount = Math.ceil(this.listItems.length / this.limit);
 
         this.getPaginationNumbers();
@@ -30,24 +30,24 @@ export default class Pagination {
     }
 
     initPagination = () => {
-        document.querySelector(".pagination").style.display = 'block';
+        this.navWrapper.style.display = 'block';
 
         this.prevButton.addEventListener("click", () => {
             this.setCurrentPage(this.currentPage - 1);
-
-            console.log(this.currentPage);
         });
 
         this.nextButton.addEventListener("click", () => {
             this.setCurrentPage(this.currentPage + 1);
-
-            console.log(this.currentPage);
         });
 
     }
 
+    setListItems = () => {
+        this.listItems = [...this.parentNode.querySelectorAll("[data-paginate-item]")];
+    }
+
     createLink = () => {
-        document.querySelectorAll("[page-index]").forEach((button) => {
+        [...this.parentNode.querySelectorAll("[page-index]")].map((button) => {
             const pageIndex = Number(button.getAttribute("page-index"));
 
             if (pageIndex) {
@@ -82,8 +82,9 @@ export default class Pagination {
         const prevRange = (pageNum - 1) * this.limit;
         const currRange = pageNum * this.limit;
 
-        this.listItems.forEach((item, index) => {
+        this.listItems.map((item, index) => {
             item.classList.add("book--hidden");
+
             if (index >= prevRange && index < currRange) {
                 item.classList.remove("book--hidden");
             }
@@ -91,7 +92,7 @@ export default class Pagination {
     };
 
     handleActivePageNumber = () => {
-        document.querySelectorAll("[page-index]").forEach((button) => {
+        [...this.parentNode.querySelectorAll("[page-index]")].map((button) => {
             button.classList.remove("btn--tertiary");
             const pageIndex = Number(button.getAttribute("page-index"));
 
@@ -123,6 +124,20 @@ export default class Pagination {
         } else {
             this.enableButton(this.nextButton);
         }
+    };
+
+    resetPagination = () => {
+
+        this.paginationNumbers.innerHTML = "";
+        this.listItems.map(el => {
+            el.classList.remove("book--hidden")
+        });
+
+        this.setListItems()
+
+        this.getPaginationNumbers();
+        this.setCurrentPage(1);
+        this.createLink();
     };
 
 }

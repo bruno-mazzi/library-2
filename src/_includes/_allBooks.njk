@@ -1,13 +1,16 @@
 <div class="wrapper">
-    <div class="wrapper__inner">
+    <div class="wrapper__inner" data-filters="booksList" data-paginate="booksList">
+
         <h2 class="title title--2">Toutes les lectures</h2>
+
         <div class="filters">
-            <button class="filter__btn btn btn--secondary" data-timeBtn="asc">Trier par date de publication</button>
-            <button class="filter__btn btn btn--secondary" data-nameBtn="asc">Trier par nom</button>
+            <button class="filter__btn btn btn--secondary" data-filter-toggle="time">Trier par date de publication</button>
+            <button class="filter__btn btn btn--secondary" data-filter-toggle="name">Trier par nom</button>
         </div>
-        <div class="booksList" data-paginator="booksList" data-filters="booksList">
+
+        <div class="booksList" data-paginate-list data-filter-list>
             {% for post in collections.post %}
-                <article class="book book--details" data-paginated data-filtered-item>
+                <article class="book book--details" data-paginate-item data-filtered-item>
                     <a href="{{ post.url }}" class="book__link">
                         <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
                              alt="couverture de {{ post.data.title }}" loading="lazy" class="book__visual">
@@ -29,17 +32,18 @@
                 </article>
             {% endfor %}
         </div>
-        <nav class="booksList__pagination pagination">
+
+        <nav class="booksList__pagination pagination" data-paginate-wrapper>
             <button class="pagination__btn btn btn--secondary" title="Page précédente" aria-label="Page précédente" data-prev>
                 &lt;
             </button>
 
-            <div class="pagination__numbers" data-numbers>
+            <div class="pagination__numbers" data-numbers></div>
 
-            </div>
             <button class="pagination__btn btn btn--secondary" title="Page suivante" aria-label="Page suivante" data-next>
                 &gt;
             </button>
         </nav>
+
     </div>
 </div>

@@ -5,6 +5,7 @@ date: 2019-11-13
 last-update: 20-06-2022
 categories: ["Photo", "Educatif"]
 tags: post
+layout: "_article.njk"
 couverture: "ainu-costumes"
 ---
 
