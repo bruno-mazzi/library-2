@@ -87,39 +87,16 @@ export default class Filters {
 
     sortList = (name, order) => {
 
+        let target = this.reordoredArr = [...this.FilteredItemsInstances];
+        let txtValue = name + "Value";
+
         if (name === FILTER_TYPES.NAME) {
-            this.reordoredArr = [...this.FilteredItemsInstances].sort(function(a, b) {
-                if (order === ORDER_TYPES.DESC) {
-                    const kek = a;
-                    a = b;
-                    b = kek;
-                }
-                if (b.nameValue > a.nameValue) {
-                    return 1;
-                }
-                if (b.nameValue < a.nameValue) {
-                    return -1;
-                }
-                return 0;
-            });
+            //this.reorder(name, order);
+            target.sort(this.propComparator(txtValue, order));
         }
 
         if (name === FILTER_TYPES.TIME) {
-            this.reordoredArr = [...this.FilteredItemsInstances].sort(function(a, b) {
-                if (order === ORDER_TYPES.DESC) {
-                    const kek = a;
-                    a = b;
-                    b = kek;
-                }
-
-                if (b.timeValue > a.timeValue) {
-                    return 1;
-                }
-                if (b.timeValue < a.timeValue) {
-                    return -1;
-                }
-                return 0;
-            });
+            target.sort(this.propComparator(txtValue, order));
         }
 
         this.appendList();
@@ -133,5 +110,22 @@ export default class Filters {
         });
 
         this.paginationInstance && this.paginationInstance.resetPagination();
+    }
+
+   propComparator = (propName, order) => {
+       return function(a, b) {
+           if (order === ORDER_TYPES.DESC) {
+               const kek = a;
+               a = b;
+               b = kek;
+           }
+           if (b[propName] > a[propName]) {
+               return 1;
+           }
+           if (b[propName] < a[propName]) {
+               return -1;
+           }
+           return 0;
+       }
     }
 }
