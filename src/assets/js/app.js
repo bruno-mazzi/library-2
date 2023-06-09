@@ -1,6 +1,7 @@
 import Darkmode from "./darkmode.js";
 import Pagination from "./pagination.js";
 import Filters from "./filters.js";
+import Search from "./search.js";
 window.addEventListener('DOMContentLoaded', (event) => {
     new Darkmode();
 
@@ -18,5 +19,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const paginateIndex = paginateInstances.findIndex((elem) => elem.identifier === identifier)
 
         new Filters(filter, paginateIndex !== -1 ? paginateInstances[paginateIndex].instance : null);
-    })
+    });
+
+    [...document.querySelectorAll('[data-search]')].map((filter, index) => {
+        const identifier = filter.getAttribute('data-search')
+        const searchIndex = paginateInstances.findIndex((elem) => elem.identifier === identifier)
+
+        new Search(filter, searchIndex !== -1 ? paginateInstances[searchIndex].instance : null);
+    });
 });

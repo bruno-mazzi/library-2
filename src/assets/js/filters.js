@@ -10,9 +10,9 @@ const ORDER_TYPES = {
 
 
 class FilteredItem {
-    node = null
-    nameValue = ''
-    timeValue = ''
+    node = null;
+    nameValue = '';
+    timeValue = '';
 
     constructor(node) {
         this.node = node
@@ -28,7 +28,7 @@ class FilterToggle {
 
     node = null;
     filterType = '';
-    order = null
+    order = null;
 
     constructor(node, filtersInstance) {
         this.filtersInstance = filtersInstance;
@@ -56,7 +56,7 @@ class FilterToggle {
 
 export default class Filters {
 
-    FilteredItemsInstances = []
+    FilteredItemsInstances = [];
     TogglersIntances = [];
     filterList = null;
     reordoredArr = null;

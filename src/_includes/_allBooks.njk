@@ -1,16 +1,18 @@
 <div class="wrapper">
-    <div class="wrapper__inner" data-filters="booksList" data-paginate="booksList">
+    <div class="wrapper__inner" data-filters="booksList" data-paginate="booksList" data-search>
 
         <h2 class="title title--2">Toutes les lectures</h2>
 
         <div class="filters">
             <button class="filter__btn btn btn--secondary" data-filter-toggle="time">Trier par date de publication</button>
             <button class="filter__btn btn btn--secondary" data-filter-toggle="name">Trier par nom</button>
+            <label for="searchbox" class="">Recherche</label>
+            <input class="" type="search" id="searchbox" placeholder="Renseignez un mot clé">
         </div>
 
-        <div class="booksList" data-paginate-list data-filter-list>
+        <div class="booksList" data-paginate-list data-filter-list data-search-list>
             {% for post in collections.post %}
-                <article class="book book--details" data-paginate-item data-filtered-item>
+                <article class="book book--details" data-paginate-item data-filtered-item data-searched-item>
                     <a href="{{ post.url }}" class="book__link">
                         <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
                              alt="couverture de {{ post.data.title }}" loading="lazy" class="book__visual">
