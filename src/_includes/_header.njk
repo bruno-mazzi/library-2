@@ -1,9 +1,8 @@
-<header role="banner" class="header page__header">
+<header role="banner" class="header">
     <a href="#main" class="sr-only sr-only-focusable">Aller au contenu</a>
     {% if title == "Accueil" %}
-        <h1 class="title title--main">{{ data.title }}</h1>
+        <h1 class="title title--logo">{{ data.title }}</h1>
     {% else %}
-        <p class="title title--main"><a href="/" class="link link--noDeco">{{ data.title }}</a></p>
+        <p class="title title--logo"><a href="/">{{ data.title }}</a></p>
     {% endif %}
-    <p class="text text--subtitle">{{ data.description }}</p>
 </header>

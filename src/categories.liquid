@@ -8,33 +8,33 @@ permalink: "/categories/{{ category | slugify }}/index.html"
 layout: "page.njk"
 ---
 
-<div class="article page__article">
-    <img src="https://placehold.co/1700x700" alt="">
-
-    <div class="article__inner">
-        <h2 class="title title--main">Catégorie : {{ category }}</h2>
+<article class="article">
+                <div class="article__metadata">
+                    <h3 class="article__title title">{{ category }}</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta iusto maxime nam sit provident alias a aliquid aspernatur, nesciunt error qui ea perferendis ex, dolore odit id beatae expedita.</p>
+                </div>
+                <div class="article__description article__description--big">
+                    <ul class="booksList">
 
         {% assign posts = collections.post | filterByCategory: category %}
         {% for post in posts reversed %}
-            <article class="book book--details">
-                <a href="{{ post.url }}" class="book__link">
-                    <img src="../../assets/img/cover/{{ post.data.couverture }}-th.webp" alt="couverture de {{ post.data.title }}" loading="lazy">
-                </a>
-
-                <div class="book__title">
-                    <h3 class="title title--3">{{ post.data.title }}</h3>
-                    <h4 class="title title--4">{{ post.data.author }}</h4>
-                </div>
-
-                <footer class="book__footer">
-                    <p class="text text--sm">Date de publication : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span></p>
-                    <p class="text text--sm">Catégorie :
+        <li class="booksList__item book">
+                            <div class="book__img">
+                                <img src="../../assets/img/cover/{{ post.data.couverture }}-th.webp" class="img-resp" alt="couverture de {{ post.data.title }}" loading="lazy">
+                            </div>
+                            <a href="{{ post.url }}" class="book__link">
+                                <h3 class="title book__content">{{ post.data.title }}</h3>
+                                <p class="book__content">Auteur : {{ post.data.author }} - Date : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span> - Editeur : XXX</p>
+                                <p class="book__content">Langue : Fr</p>
+                                <p class="book__content">Catégorie :
                         {% for cat in post.data.categories %}
                             <a href="/categories/{{ cat | slugify }}/index.html" class="link">{{ cat }}</a>
                         {% endfor %}
                     </p>
-                </footer>
-            </article>
+                            </a>
+                        </li>
+
         {% endfor %}
-    </div>
-</div>
+</ul>
+                </div>
+            </article>

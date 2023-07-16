@@ -1,29 +1,19 @@
-<div class="wrapper">
-    <div class="wrapper__inner">
-        <h2 class="title title--2">Toutes les lectures</h2>
-        <div class="booksList">
-            {% for post in collections.post %}
-                <article class="book book--details">
-                    <a href="{{ post.url }}" class="book__link">
-                        <img src="assets/img/cover/{{ post.data.couverture }}-th.webp"
-                             alt="couverture de {{ post.data.title }}" loading="lazy">
-                    </a>
-
-                    <div class="book__title">
-                        <h3 class="title title--3">{{ post.data.title }}</h3>
-                        <h4 class="title title--4">{{ post.data.author }}</h4>
-                    </div>
-
-                    <footer class="book__footer">
-                        <p class="text text--sm">Date de publication : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span></p>
-                        <p class="text text--sm">Catégorie :
-                            {% for cat in post.data.categories %}
-                                <a href="/categories/{{ cat | slugify }}/index.html" class="link">{{ cat }}</a>
-                            {% endfor %}
-                        </p>
-                    </footer>
-                </article>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+<ul class="booksList">
+    {% for post in collections.post %}
+        <li class="booksList__item book">
+            <div class="book__img">
+                <img src="assets/img/cover/{{ post.data.couverture }}-th.webp" alt="couverture de {{ post.data.title }}" class="img-resp" loading="lazy">
+            </div>
+            <a href="{{ post.url }}" class="book__link">
+                <h3 class="title book__content">{{ post.data.title }}</h3>
+                <p class="book__content">Auteur : {{ post.data.author }} - Date : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span> - Editeur : XXX</p>
+                <p class="book__content">Langue : Fr</p>
+                <p class="book__content">
+                    {% for cat in post.data.categories %}
+                        <a href="/categories/{{ cat | slugify }}/index.html" class="link">{{ cat }}</a>
+                    {% endfor %}
+                </p>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
