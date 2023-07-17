@@ -3,91 +3,15 @@
 .title {
   color: var(--theme--text);
   font-family: "Open Sans", arial, sans-serif;
+  font-weight: 600;
+  margin: 0;
+
+  &--logo {
+    font-size: 1.2rem;
+  }
 
   &--main {
-    font-size: rem-calc(32);
-    font-weight: 700;
+    font-size: 1.8rem;
   }
 
-  &--2 {
-    font-size: rem-calc(24);
-    font-weight: 600;
-  }
-
-  &--3 {
-    font-size: rem-calc(20);
-    font-weight: 600;
-    line-height: 1.2;
-  }
-
-  &--4 {
-    font-size: rem-calc(16);
-    font-weight: 400;
-    line-height: 1.2;
-  }
-
-  &--mb8 {
-    margin-bottom:8px;
-  }
-
-}
-
-.text {
-  color: var(--theme--text);
-  font-family: "Open Sans", arial, sans-serif;
-  font-size: rem-calc(16);
-
-  &--subtitle {
-    font-size: rem-calc(18);
-    font-weight: 400;
-  }
-
-  &--sm {
-    font-size: rem-calc(15);
-  }
-
-  &--mb8 {
-    margin-bottom: 8px;
-  }
-
-}
-
-.link {
-  color: var(--theme--text);
-  text-decoration: underline;
-
-  &--noDeco {
-    text-decoration: none;
-  }
-}
-
-.article {
-
-  &__inner {
-    margin: 0 auto;
-    max-width: 700px;
-  }
-
-  &__footer {
-    border-top: 1px solid var(--theme--color-primary);
-    padding-top: 24px;
-
-    &--title {
-      margin-bottom: 8px;
-    }
-  }
-
-  .title--main {
-    margin: 20px auto 28px auto;
-    text-align: center;
-  }
-
-  .text {
-    font-size: rem-calc(18);
-    margin: 0 0 24px 0;
-
-    &--sm {
-      font-size: rem-calc(15);
-    }
-  }
 }

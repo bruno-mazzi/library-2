@@ -10,7 +10,7 @@
                 <p class="book__content">Langue : Fr</p>
                 <p class="book__content">
                     {% for cat in post.data.categories %}
-                        <a href="/categories/{{ cat | slugify }}/index.html" class="link">{{ cat }}</a>
+                        {{ cat }}
                     {% endfor %}
                 </p>
             </a>

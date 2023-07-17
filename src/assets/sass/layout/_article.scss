@@ -1,0 +1,32 @@
+@use '../config' as *;
+
+.article {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+
+    &__metadata {
+        width: 15%;
+    }
+
+    &__visual {
+        width: 45%;
+    }
+
+    &__description {
+        width: 40%;
+    }
+
+    &__description--big {
+        width: 85%;
+    }
+
+    &__description--only {
+        margin-left: 15%;
+        width: 60%;
+    }
+
+    &__title {
+        font-size: 1.7rem;
+    }
+}

@@ -1,55 +1,26 @@
 @use '../config' as *;
 
-.booksList {
-    display: grid;
-    gap: 24px;
-    grid-template-columns: 1fr;
-    padding: 16px 0;
-
-    @include mq('md') {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @include mq('lg') {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
 .book {
-    $self: &;
-
     &__link {
-        display: block;
-        text-align: center;
+        background: var(--primary-color);
+        border-radius: 8px 8px 0 0;
+        display: none;
+        height: 100%;
+        padding: 0.8rem;
         text-decoration: none;
-        width: 200px;
     }
 
-    &--details {
-        display: grid;
-        gap: 8px;
-        grid-template-columns: auto 1fr;
-        grid-auto-rows: auto auto;
+    &:hover .book__link {
+        display: block;
+    }
 
-        #{$self}__link {
-            max-width: 80px;
-            grid-column: 1 / 2;
-            grid-row: 1 / 3;
-        }
+    &:hover .book__img {
+        display: none;
+    }
 
-        #{$self}__title {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
-        }
-
-        #{$self}__footer {
-            align-self: end;
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
-        }
-
-        @include mq('md') {
-            flex: 1 1 0px;
-        }
+    &__content {
+        color: var(--text-alt-color);
+        margin: 0 0 1rem 0;
+        text-decoration: none;
     }
 }

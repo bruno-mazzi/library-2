@@ -1,0 +1,24 @@
+@use '../config' as *;
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', arial, sans-serif;
+}
+
+.img-resp {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text-highlight-color);
+    border-bottom: 1px solid var(--text-highlight-color);
+}

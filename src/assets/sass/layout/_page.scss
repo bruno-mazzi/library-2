@@ -1,5 +1,6 @@
 @use '../config' as *;
 
+/*
 .page {
   font-family: "Open Sans", arial, sans-serif;
   margin:0;
@@ -12,4 +13,10 @@
       margin: 0 16px;
     }
   }
+}
+*/
+
+.container {
+  margin: auto;
+  max-width: 1440px;
 }

@@ -1,0 +1,14 @@
+@use '../config' as *;
+
+.booksList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        border-bottom: 10px solid var(--primary-color);
+        list-style-type: none;
+        padding: 1.2rem 0.4rem 0 0.4rem;
+    }
+}
