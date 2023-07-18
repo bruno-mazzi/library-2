@@ -6,32 +6,31 @@ last-update: 20-06-2022
 categories: ["Guide"]
 tags: post
 couverture: "kotchi-kotchi"
-layout: "page.njk"
+layout: "articles.njk"
 ---
 
-<article class="article page__article">
-    <img src="https://placehold.co/1700x700" alt="">
+<div class="article__metadata">
+    <p><strong>Auteur :</strong><br><a href="">Alexandre Bonnefoy</a> - <a href="">Delphine Vaufrey</a></p>
+    <p><strong>Langue :</strong><br>Français</p>
+    <p><strong>Editeur :</strong><br><a href="">Issekinicho</a></p>
+    <p><strong>Date de publication :</strong><br>XX/XX/XXXX</p>
+    <p><strong>ISBN-13 :</strong><br>979-1095397038</p>
+    <hr>
+    <p><strong>Posté le :</strong><br>XX/XX/XXXX</p>
+    <p><strong>Tags :</strong><br><a href="">Guide</a><br><a href="">Educatif</a></p>
+</div>
 
-    <div class="article__inner">
-        <h1 class="title title--main">{{ title }}</h1>
+<div class="article__visual">
+    <img src="/assets/img/cover/{{ post.data.couverture }}-th.webp" class="img-resp" alt="couverture de {{ post.data.title }}">
+</div>
 
-        <p class="text">Si vous ne deviez prendre qu’un guide pour voyager au Japon, c’est simple, c’est celui-là. C’est le guide que j’aurais aimé avoir pour mon premier voyage.</p>
+<div class="article__description">
+    <h3 class="article__title title">{{ title }}</h3>
+                    
+    <p>Si vous ne deviez prendre qu’un guide pour voyager au Japon, c’est simple, c’est celui-là. C’est le guide que j’aurais aimé avoir pour mon premier voyage.</p>
 
+    <p>Il ne s’agit pas d’un guide classique avec liste d’adresses d’hôtels, de restaurants, de lieu à visiter (qui, il faut l’avouer, sert rarement) mais d’un guide sur comment voyager au Japon.</p>
 
-        <p class="text">Il ne s’agit pas d’un guide classique avec liste d’adresses d’hôtels, de restaurants, de lieu à visiter (qui, il faut l’avouer, sert rarement) mais d’un guide sur comment voyager au Japon.</p>
-
-        <p class="text">Il aborde des sujets aussi divers que le passage de la douane à l’arrivée au Japon, comment acheter une carte pour le métro, les divers types de nourriture, les divers restaurants, les us et coutumes à respecter, un guide des villes, quelques idées d’itinéraires, les dates des fêtes etc, etc.<br>
-            Bref sur plus de 300 pages vous avez un concentré d’informations et d’expériences sur les voyages au Japon, de quoi désarmorcer des inquiétudes et surtout d’ouvrir des perspectives sur beaucoup de sujets.</p>
-
-        <footer class="article__footer">
-            <h2 class="title title--3 article__footer--title">Détails :</h2>
-            <ul>
-                <li><strong>Auteurs :</strong> Alexandre Bonnefoy - Delphine Vaufrey - <a href="http://www.issekinicho.fr/accueil/" class="link">http://www.issekinicho.fr/accueil/</a></li>
-                <li><strong>Langue :</strong> Français</li>
-                <li><strong>Editeur :</strong> <a href="http://www.issekinicho.fr/accueil/" class="link">http://www.issekinicho.fr/accueil/</a></li>
-                <li><strong>Date de publication :</strong> 10/02/2018</li>
-                <li><strong>ISBN-13 :</strong> 979-1095397038</li>
-            </ul>
-        </footer>
-    </div>
-</article>
+    <p>Il aborde des sujets aussi divers que le passage de la douane à l’arrivée au Japon, comment acheter une carte pour le métro, les divers types de nourriture, les divers restaurants, les us et coutumes à respecter, un guide des villes, quelques idées d’itinéraires, les dates des fêtes etc, etc.<br>
+    Bref sur plus de 300 pages vous avez un concentré d’informations et d’expériences sur les voyages au Japon, de quoi désarmorcer des inquiétudes et surtout d’ouvrir des perspectives sur beaucoup de sujets.</p>
+</div>
