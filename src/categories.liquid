@@ -27,12 +27,26 @@ layout: "base.njk"
               loading="lazy">
           </div>
           <a href="{{ post.url }}" class="book__link">
-            <h3 class="title book__content">{{ post.data.title }}</h3>
-            <p class="book__content">Auteur : {{ post.data.author }} - Date :
+            <h3 class="title title--2 book__content">{{ post.data.title }}</h3>
+            <p class="book__content">Auteur :
+              {% for auteur in post.data.auteurs %}
+                {{ auteur }}
+              {% endfor %}
+            </p>
+            <p class="book__content">Date :
               <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span>
-              - Editeur : XXX</p>
-            <p class="book__content">Langue : Fr</p>
-            <p class="book__content">Catégorie :
+            </p>
+            <p class="book__content">Editeur :
+              {% for editeur in post.data.editeurs %}
+                {{ editeur }}
+              {% endfor %}
+            </p>
+            <p class="book__content">Langue :
+              {% for langue in post.data.langues %}
+                {{ langue }}
+              {% endfor %}
+            </p>
+            <p class="book__content">Tags :
               {% for cat in post.data.categories %}
                 {{ cat }}
               {% endfor %}
