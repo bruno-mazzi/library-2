@@ -1,4 +1,9 @@
 <div class="description">
-    <h2 class="title title--main description__col1">{{ data.description }}</h2>
+    {% if title == "Accueil" %}
+        <h2 class="title title--main description__col1">{{ data.description }}</h2>
+    {% else %}
+        <p class="title title--main description__col1">{{ data.description }}</p>
+    {% endif %}
+
     <p class="description__col1">{{ data.description2|safe }}</p>
 </div>
