@@ -1,0 +1,46 @@
+---
+title: Auteur
+pagination:
+  data: collections.auteurs
+  size: 1
+  alias: auteur
+permalink: "/auteurs/{{ auteur | slugify }}/index.html"
+layout: "base.njk"
+---
+
+<article class="article">
+  <div class="article__metadata">
+    <h3 class="article__title title">{{ auteur }}</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta iusto maxime nam sit provident alias a aliquid aspernatur, nesciunt error qui ea perferendis ex, dolore odit id beatae expedita.</p>
+  </div>
+  <div class="article__description article__description--big">
+    <ul class="booksList">
+
+      {% assign posts = collections.post | filterByAuteur: auteur %}
+      {% for post in posts reversed %}
+        <li class="booksList__item book">
+          <div class="book__img">
+            <img
+              src="../../assets/img/cover/{{ post.data.couverture }}-th.webp"
+              class="img-resp"
+              alt="couverture de {{ post.data.title }}"
+              loading="lazy">
+          </div>
+          <a href="{{ post.url }}" class="book__link">
+            <h3 class="title book__content">{{ post.data.title }}</h3>
+            <p class="book__content">Auteur : {{ post.data.author }} - Date :
+              <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span>
+              - Editeur : XXX</p>
+            <p class="book__content">Langue : Fr</p>
+            <p class="book__content">Catégorie :
+              {% for cat in post.data.categories %}
+                {{ cat }}
+              {% endfor %}
+            </p>
+          </a>
+        </li>
+
+      {% endfor %}
+    </ul>
+  </div>
+</article>

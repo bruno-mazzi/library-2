@@ -1,0 +1,33 @@
+<div class="article__metadata">
+    <p class="text">
+        <strong class="title title--2">Auteur :</strong><br>
+        {% for auteur in auteurs %}
+            <a href="/auteurs/{{ auteur | slug }}">{{ auteur }}</a>
+        {% endfor %}
+    </p>
+    <p class="text">
+        <strong class="title title--2">Langue :</strong><br>
+        {% for langue in langues %}
+            {{ langue }}
+        {% endfor %}
+    </p>
+    <p class="text">
+        <strong class="title title--2">Editeur :</strong><br>
+        {% for editeur in editeurs %}
+            <a href="/editeurs/{{ editeur | slug }}">{{ editeur }}</a>
+        {% endfor %}
+    </p>
+    <p class="text">
+        <strong class="title title--2">Date de publication :</strong><br>{{ date | niceDate }}</p>
+    <p class="text">
+        <strong class="title title--2">ISBN :</strong><br>{{ ISBN }}</p>
+    <hr class="separation">
+    <p class="text">
+        <strong class="title title--2">Posté le :</strong><br>{{ lastUpdate | niceDate }}</p>
+    <p class="text">
+        <strong class="title title--2">Tags :</strong><br>
+        {% for categorie in categories %}
+            <a href="/categories/{{ categorie | slug }}">{{ categorie }}</a>
+        {% endfor %}
+    </p>
+</div>
