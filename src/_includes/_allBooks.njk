@@ -1,5 +1,5 @@
 <ul class="booksList">
-    {% for post in collections.post %}
+    {% for post in collections.post | reverse %}
         <li class="booksList__item book">
             <div class="book__img">
                 <img src="assets/img/cover/{{ post.data.couverture }}-th.webp" alt="couverture de {{ post.data.title }}" class="img-resp" loading="lazy">
@@ -9,7 +9,7 @@
                 <p class="book__content">Auteur : {% for auteur in post.data.auteurs %}{{ auteur }}
                     {% endfor %}
                 </p>
-                <p class="book__content">Date : <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span></p>
+                <p class="book__content">Date de publication : <span class="time" data-time="{{ post.data.datePublication | niceDateJs }}">{{ post.data.datePublication | niceDate }}</span></p>
                 <p class="book__content">Editeur :  {% for editeur in post.data.editeurs %}{{ editeur }}
                     {% endfor %}
                 </p>

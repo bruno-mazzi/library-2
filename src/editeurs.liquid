@@ -34,7 +34,7 @@ layout: "base.njk"
               {% endfor %}
             </p>
             <p class="book__content">Date :
-              <span class="time" data-time="{{ post.date | niceDateJs }}">{{ post.date | niceDate }}</span>
+              <span class="time" data-time="{{ post.data.datePublication | niceDateJs }}">{{ post.data.datePublication | niceDate }}</span>
             </p>
             <p class="book__content">Editeur :
               {% for editeur in post.data.editeurs %}
