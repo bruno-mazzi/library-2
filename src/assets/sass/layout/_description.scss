@@ -1,9 +1,14 @@
 @use '../config' as *;
 
 .description {
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding: 1rem 0.4rem;
+
+    @include mq('md') {
+        grid-template-columns: 1fr 1fr;
+    }
 
     &__col1 {
         grid-column: 1/2;

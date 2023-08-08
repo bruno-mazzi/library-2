@@ -7,21 +7,49 @@
   margin: 0;
 
   &--logo {
-    font-size: 1.2rem;
+    font-size: 1rem;
+
+    @include mq('md') {
+      font-size: 1.1rem;
+    }
+
+    @include mq('ml') {
+      font-size: 1.2rem;
+    }
   }
 
   &--main {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+
+    @include mq('md') {
+      font-size: 1.6rem;
+    }
+
+    @include mq('ml') {
+      font-size: 1.8rem;
+    }
   }
 
   &--1 {
-    font-size: 1.4rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
+
+    @include mq('md') {
+      font-size: 1.2rem;
+    }
+
+    @include mq('ml') {
+      font-size: 1.4rem;
+    }
   }
 
   &--2 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+
+    @include mq('ml') {
+      font-size: 1rem;
+    }
   }
 
 }

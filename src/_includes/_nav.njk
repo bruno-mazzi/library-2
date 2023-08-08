@@ -1,9 +1,14 @@
 <nav>
-    <ul class="navtags">
-        {% for post in collections.categories %}
-            <li class="navtags__item">
-                <a href="/categories/{{ post | slugify }}/index.html" class="navtags__link">{{ post }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <label class="buttonMenu" for="buttonInput">Menu</label>
+    <input type="checkbox" id="buttonInput" class="menuShower sr-only">
+    <div class="navtags">
+        <p class="sr-only">Catégories des oeuvres&nbsp;:</p>
+        <ul class="navtags__items">
+            {% for post in collections.categories %}
+                <li class="navtags__item">
+                    <a href="/categories/{{ post | slugify }}/index.html" class="navtags__link">{{ post }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </nav>

@@ -2,28 +2,63 @@
 
 .article {
     display: flex;
+    flex-direction: column;
     gap: 3rem;
     margin-top: 3rem;
 
+    @include mq('md') {
+        flex-direction: row;
+    }
+
     &__metadata {
-        width: 15%;
+        order: 3;
+        width: 100%;
+
+        &--highlight {
+            order: 1;
+        }
+
+        @include mq('md') {
+            order: 1;
+            width: 15%;
+        }
     }
 
     &__visual {
-        width: 45%;
+        width: 100%;
+
+        @include mq('md') {
+            order: 1;
+            width: 45%;
+        }
     }
 
     &__description {
-        width: 40%;
+        width: 100%;
+
+        @include mq('md') {
+            order: 1;
+            width: 40%;
+        }
     }
 
     &__description--big {
-        width: 85%;
+        order: 2;
+        width: 100%;
+
+        @include mq('md') {
+            order: 1;
+            width: 85%;
+        }
     }
 
     &__description--only {
-        margin-left: 15%;
-        width: 60%;
+        width: 100%;
+
+        @include mq('md') {
+            margin-left: 15%;
+            width: 90%;
+        }
     }
 
     &__title {
